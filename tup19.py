@@ -1,0 +1,21 @@
+#Python – Assign Frequency to Tuples
+t=int(input("Enter your number of tuples:"))
+tup_list=[]
+for i in range (t):
+    ele1=input(f"Enter your 1 st element {i+1} :")
+    ele2=input(f"Enter your 2nd element {i+1} :")
+    current_tuple=(ele1,ele2)
+    tup_list.append(current_tuple)
+print("Your tuple list is :",tup_list)
+
+def assign_frequency(tup_list):
+    freq_dict = {}
+    for tup in tup_list:
+        if tup in freq_dict:
+            freq_dict[tup] = freq_dict[tup]  + 1
+        else:
+            freq_dict[tup] = 1
+    return [(key + (value,)) for key, value in freq_dict.items()]
+
+print(assign_frequency(tup_list))
+ 
